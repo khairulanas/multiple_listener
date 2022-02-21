@@ -16,7 +16,7 @@ class FakeAuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     await Future.delayed(const Duration(seconds: 3));
     int random = Random().nextInt(10);
     if (random % 2 == 0) {
-      return UserModel('sukses email', email);
+      return UserModel('sukses email', email, '');
     } else {
       if (random > 5) {
         throw EmailAlreadyUsedException('email already used');
@@ -32,7 +32,7 @@ class FakeAuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     await Future.delayed(const Duration(seconds: 3));
     int random = Random().nextInt(10);
     if (random % 2 == 0) {
-      return UserModel('sukses phone', phone);
+      return UserModel('sukses phone', '', phone);
     } else {
       if (random > 5) {
         throw PhoneAlreadyUsedException('phone already used');
