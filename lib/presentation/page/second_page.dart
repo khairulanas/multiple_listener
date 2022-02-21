@@ -20,8 +20,8 @@ class _SecondPageState extends State<SecondPage> {
   @override
   void initState() {
     super.initState();
-    tEmail = TextEditingController(text: '');
-    tPhone = TextEditingController(text: '');
+    tEmail = TextEditingController(text: 'konohamaru@konoha.com');
+    tPhone = TextEditingController(text: '98376298375098235');
   }
 
   @override
@@ -77,7 +77,8 @@ class _SecondPageState extends State<SecondPage> {
                       setState(() {
                         isEmail = newValue;
                       });
-                    })
+                    }),
+                Text(isEmail ? 'email' : 'phone')
               ]),
               const SizedBox(
                 height: 50,
@@ -114,5 +115,12 @@ class _SecondPageState extends State<SecondPage> {
             ],
           ),
         ));
+  }
+
+  @override
+  void dispose() {
+    tEmail.dispose();
+    tPhone.dispose();
+    super.dispose();
   }
 }
