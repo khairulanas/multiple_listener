@@ -23,7 +23,7 @@ class LastPage extends StatelessWidget {
           child: Column(
             children: [
               Text(userData.name),
-              Text(userData.email),
+              Text(isEmailData ? userData.email : userData.phone),
             ],
           ),
         ));
